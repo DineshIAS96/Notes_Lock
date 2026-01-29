@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.1 भारत में भूमि पंजीकरण प्रणाली</title>
+
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 20px;
+    }
+
+    /* MAIN BOX */
+    .notes-box {
+      max-width: 1100px;
+      margin: auto;
+      background: #020617;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 40px rgba(56, 189, 248, .35);
+    }
+
+    h1 {
+      text-align: center;
+      color: #38bdf8;
+    }
+
+    /* GRID */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    @media(max-width:900px) {
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* CARD */
+    .section-box {
+      background: linear-gradient(180deg, rgba(15, 23, 42, .95), rgba(2, 6, 23, .95));
+      border: 1px solid rgba(56, 189, 248, .35);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .section-box h2 {
+      color: #22c55e;
+      border-bottom: 1px dashed rgba(34, 197, 94, .5);
+    }
+
+    /* LOCK PREVIEW */
+    .locked {
+      max-height: 300px;
+      overflow: hidden;
+      position: relative;
+      filter: blur(1.2px);
+    }
+
+    .locked::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 90px;
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0), rgba(2, 6, 23, .85));
+    }
+
+    /* UNLOCK */
+    .unlocked {
+      max-height: none;
+      filter: none;
+    }
+
+    .unlocked::after {
+      display: none;
+    }
+
+    /* BUTTONS */
+    .unlock-btn,
+    .test-btn {
+      display: block;
+      margin: 22px auto;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 40px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .unlock-btn {
+      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #000;
+    }
+
+    .test-btn {
+      background: linear-gradient(135deg, #facc15, #22c55e);
+      color: #000;
+      font-weight: 600;
+      display: none;
+    }
+
+    /* FORM */
+    .form-box {
+      display: none;
+      background: #020617;
+      border: 1px solid #38bdf8;
+      border-radius: 14px;
+      padding: 20px;
+      max-width: 420px;
+      margin: 20px auto;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: #020617;
+      border: 1px solid #38bdf8;
+      color: #e5e7eb;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 15px;
+      padding: 12px;
+      background: #22c55e;
+      border: none;
+      font-size: 16px;
+    }
+
+    #unlockedMsg {
+      display: none;
+      text-align: center;
+      color: #22c55e;
+      font-weight: bold;
+    }
+
+    /* MOBILE FIX */
+    @media(max-width:600px) {
+      .notes-box {
+        padding: 16px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .locked {
+        max-height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="notes-box">
+
+    <h1 id="pageTitle">1.1 भारत में भूमि पंजीकरण प्रणाली</h1>
+
+    <!-- 🔓 FREE PREVIEW -->
+    <p>
+      📰 <b>सुर्ख़ियों में क्यों?</b><br>
+      हाल ही में भारत के उच्चतम न्यायालय ने भारत की भूमि पंजीकरण व स्वामित्व प्रणाली में
+      मूलभूत सुधार की आवश्यकता पर ज़ोर दिया।
+    </p>
+
+    <hr>
+
+    <div id="lockedContent" class="locked">
+
+      <div class="notes-grid">
+
+        <div class="section-box">
+          <h2>⚖️ न्यायालय के प्रमुख अवलोकन</h2>
+          ❌ नामांतरण (Mutation) अनिवार्यता वाला नियम निरस्त<br><br>
+          <b>स्पष्ट किया:</b>
+          <ul>
+            <li>पंजीकरण = केवल लेन-देन का रिकॉर्ड</li>
+            <li>स्वामित्व का प्रमाण नहीं</li>
+          </ul>
+        </div>
+
+        <div class="section-box">
+          <h2>🏛️ संवैधानिक स्थिति</h2>
+          <ul>
+            <li>भूमि → राज्य सूची (7वीं अनुसूची)</li>
+            <li>दस्तावेज पंजीकरण → समवर्ती सूची</li>
+          </ul>
+        </div>
+
+        <div class="section-box">
+          <h2>⚖️ भूमि पंजीकरण प्रणालियाँ</h2>
+          <b>Presumptive Title System</b>
+          <ul>
+            <li>केवल दस्तावेज पंजीकरण</li>
+            <li>स्वामित्व की गारंटी नहीं</li>
+            <li>Chain of Deeds</li>
+          </ul>
+          <b>Conclusive / Torrens System</b>
+          <ul>
+            <li>पंजीकरण = निर्णायक स्वामित्व</li>
+            <li>सरकार द्वारा गारंटी</li>
+          </ul>
+        </div>
+
+        <div class="section-box">
+          <h2>⚠️ प्रमुख समस्याएं</h2>
+          <ul>
+            <li>औपनिवेशिक कानून (1882, 1899, 1908)</li>
+            <li>66% दीवानी मुकदमे भूमि विवाद</li>
+            <li>फर्जी दस्तावेज, अतिक्रमण</li>
+            <li>अधूरा डिजिटलीकरण</li>
+          </ul>
+        </div>
+
+        <div class="section-box">
+          <h2>🔧 सरकारी पहल</h2>
+          <ul>
+            <li>DILRMP → Conclusive ownership लक्ष्य</li>
+            <li>ULPIN (भू-आधार) → 14 अंकीय ID</li>
+            <li>NGDRS → e-पंजीकरण</li>
+          </ul>
+        </div>
+
+        <div class="section-box">
+          <h2>⚡ QUICK REVISION</h2>
+          <ul>
+            <li>पंजीकरण ≠ स्वामित्व</li>
+            <li>Mutation → केवल राजस्व अद्यतन</li>
+            <li>भारत → Presumptive title system</li>
+            <li>66% civil cases → भूमि विवाद</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <button id="unlockBtn" class="unlock-btn" onclick="openForm()">
+      🔓 Click here to unlock
+    </button>
+
+    <div class="form-box" id="userForm">
+      <input id="name" placeholder="Name">
+      <input id="mobile" placeholder="Mobile">
+      <select id="gender">
+        <option value="">Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <button class="submit-btn" onclick="submitData()">Unlock Notes</button>
+    </div>
+
+    <p id="unlockedMsg">✅ Notes Unlocked</p>
+
+    <a id="testBtn" class="test-btn" target="_blank">
+      📝 Click here to attend test
+    </a>
+
+  </div>
+  
+ <script src="https://dineshias96.github.io/Lock_Notes_js/LockNotes.js"></script>
+
+</body>
+
+</html>
